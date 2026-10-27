@@ -16,7 +16,7 @@ Documenta no meu acervo, no projeto "<NOME DO PROJETO>", organizando tudo:
 1. O que foi feito, em ordem.
 2. O que foi descoberto ou decidido, com a evidência que sustenta cada ponto.
 3. O que ficou em aberto e o que falta para fechar.
-4. As dúvidas que eu registrei — sem inventar resposta.
+4. As dúvidas que eu registrei, sem inventar resposta.
 5. As lições que servem para a próxima vez.
 
 Regras:

@@ -16,7 +16,7 @@ Três defesas, em ordem:
 
 1. No prompt: *"NÃO invente nada que não esteja nas anotações"*
 2. No prompt: *"o que completar com conhecimento próprio, marque como INFERIDO"*
-3. No material: inclua a seção **"O QUE EU NÃO TESTEI"** — ela dá à IA um lugar
+3. No material: inclua a seção **"O QUE EU NÃO TESTEI"**, que dá à IA um lugar
    legítimo para colocar o que não sabe, em vez de preencher com suposição
 
 ## "Preciso usar Obsidian?"
@@ -28,7 +28,7 @@ O que importa é ser **pesquisável** e permitir **ligação entre notas**.
 
 ## "Funciona com ChatGPT / Claude / modelo local?"
 
-Sim. O formato dos quatro campos é universal — é o que qualquer agente precisa
+Sim. O formato dos quatro campos é universal. É o que qualquer agente precisa
 para não travar. O harness também é independente de provedor.
 
 Se você usa perfil local, atenção: **mesmo local, o prompt sai para a API do
@@ -43,13 +43,13 @@ Comece com **uma coisa que você repete toda semana**.
 
 ## "E se meu material não tiver nada sensível?"
 
-O harness vai reportar zero marcadores — e isso é o comportamento correto.
+O harness vai reportar zero marcadores, e isso é o comportamento correto.
 Não force match. Material bem escrito (senha no gerenciador, IP sintético)
 não tem o que mascarar.
 
 ## "Posso adaptar para a minha área?"
 
-Sim — é o propósito. Adicione sua área em `AREAS` no `wizard/wizard.py`:
+Sim, é o propósito. Adicione sua área em `AREAS` no `wizard/wizard.py`:
 
 ```python
 "minha-area": {
@@ -61,11 +61,11 @@ Sim — é o propósito. Adicione sua área em `AREAS` no `wizard/wizard.py`:
 },
 ```
 
-Aceitamos contribuição — abra um PR com a sua área.
+Aceitamos contribuição. Abra um PR com a sua área.
 
 ## "Por que o agente às vezes cria cards demais?"
 
-Se você usa orquestração com Kanban, um playbook de 7 etapas vira 7 cards —
+Se você usa orquestração com Kanban, um playbook de 7 etapas vira 7 cards.
 e o orquestrador pode subdividir cada um. **Isso é o sistema funcionando**: ele
 mostra o trabalho distribuído.
 

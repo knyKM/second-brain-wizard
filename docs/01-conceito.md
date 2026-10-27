@@ -11,7 +11,7 @@ A informação existiu. Só não ficou guardada de um jeito que você consiga ac
 ## O que a maioria faz
 
 Contrata mais gente, compra mais ferramenta, cria mais métrica.
-**Tudo aumenta a capacidade de gerar conhecimento** — e o gargalo continua sendo a memória.
+**Tudo aumenta a capacidade de gerar conhecimento**. E o gargalo continua sendo a memória.
 
 ## O que propomos
 
@@ -19,21 +19,21 @@ Não produzir mais. **Não perder o que já foi produzido.**
 
 ## Os três verbos
 
-### Capturar — anotar do jeito que sair
+### Capturar: anotar do jeito que sair
 No meio do trabalho, ninguém tem tempo de escrever bonito. A anotação sai feia:
 abreviação, erro de digitação, "acho que", "não testei".
 
 **Isso é correto.** Se você exigir formato na captura, você não captura.
 O formato é trabalho da IA, depois.
 
-### Estruturar — a IA dá a forma
+### Estruturar: a IA dá a forma
 Aqui entra o wizard. Ele pega a anotação crua e devolve material no formato que
 o agente consegue processar sem travar.
 
 O ponto sutil: **forma fixa é o que permite achar depois.** Nota sem forma é
 arquivo morto. Nota com forma é conhecimento recuperável.
 
-### Reutilizar — perguntar em vez de recomeçar
+### Reutilizar: perguntar em vez de recomeçar
 Na próxima vez, você **busca** antes de começar. E responde em segundos:
 *"já vi isso antes? o que funcionou? como detecto? como previno?"*
 
@@ -49,7 +49,7 @@ O segundo cérebro é o fichário. Nada mais que isso.
 
 ## Por que IA muda o jogo
 
-Porque a parte chata — formatar, classificar, ligar as pontas, buscar no histórico —
+Porque a parte chata (formatar, classificar, ligar as pontas, buscar no histórico)
 **é exatamente o que um modelo de linguagem faz bem**.
 
 Você continua fazendo a parte difícil: entender o problema, decidir, executar.

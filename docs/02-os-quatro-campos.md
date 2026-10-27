@@ -5,7 +5,7 @@
 Material entregue a um agente, sem escopo e sem critério de aceitação. A resposta:
 
 > *"Sem escopo e sem critério de aceitação, o card raiz viraria 8 cards sem como
-> verificar conclusão — e o perfil não improvisa em cima de escopo ambíguo."*
+> verificar conclusão. E o perfil não improvisa em cima de escopo ambíguo."*
 
 Ele **parou**. Não inventou, não "deu um jeito". E estava certo.
 
@@ -27,7 +27,7 @@ O limite explícito. `DENTRO` e `FORA`.
 ❌ "testar o servidor"
 ✅ "DENTRO: dev.local:8080. FORA: persistência, dump de credencial, produção."
 
-O `FORA` é mais importante que o `DENTRO`. Sem ele, a IA não sabe onde parar —
+O `FORA` é mais importante que o `DENTRO`. Sem ele, a IA não sabe onde parar.
 e em segurança, isso é risco contratual.
 
 ### 3. ETAPAS (numeradas)
@@ -43,7 +43,7 @@ Como saber que a nota ficou completa.
 ✅ "nota com comando exato, saída obtida, o privilégio que permitiu a escalação,
 mapeamento ATT&CK com sub-técnica, detecção e mitigação"
 
-Sem isso, **nada termina**. O agente não tem como declarar concluído — e não deve.
+Sem isso, **nada termina**. O agente não tem como declarar concluído. E não deve.
 
 ---
 
@@ -64,7 +64,7 @@ Sem isso, **nada termina**. O agente não tem como declarar concluído — e nã
 
 | Falta | O agente faz | Você perde |
 |---|---|---|
-| Critério de aceitação | recusa e lista o que falta | nada — ele te protege |
+| Critério de aceitação | recusa e lista o que falta | nada, ele te protege |
 | Escopo | pergunta, ou para | tempo; em segurança, risco |
 | Etapas numeradas | agrupa num card só | a visão distribuída |
 | "Não testado" | não consegue inventar | a lista que evita susto |

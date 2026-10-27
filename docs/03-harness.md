@@ -3,7 +3,7 @@
 ## O problema que ninguém pensa
 
 Ao mandar anotação crua para uma API de LLM, ela **sai da sua máquina**.
-Se tiver senha, token, CPF ou nome de cliente, você vazou — e não tem desfazer.
+Se tiver senha, token, CPF ou nome de cliente, você vazou. E não tem desfazer.
 
 Documentar com IA não pode ser um atalho para quebrar sigilo profissional.
 
@@ -56,7 +56,7 @@ Saída real:
 
 ```
 ==============================================================
-HARNESS DE SANITIZACAO — teste-sensivel.txt
+HARNESS DE SANITIZACAO: teste-sensivel.txt
 ==============================================================
 bytes de entrada : 972
 bytes de saida   : 751
@@ -90,7 +90,7 @@ MARCADORES APLICADOS: 19
 ## Três decisões de design
 
 **1. O rótulo fica, o valor sai.**
-`senha: <<CREDENCIAL_2>>` — não `<<CREDENCIAL_2>>` sozinho. O modelo precisa
+`senha: <<CREDENCIAL_2>>`. Não `<<CREDENCIAL_2>>` sozinho. O modelo precisa
 saber *que era uma senha*.
 
 **2. TLDs longos primeiro no regex.**

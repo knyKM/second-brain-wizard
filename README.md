@@ -1,130 +1,117 @@
-# Segundo Cérebro — Wizard de Configuração
+# Segundo Cérebro
 
-> **Você resolve problemas difíceis e esquece como resolveu.**
-> Este repositório configura um sistema para que isso pare de acontecer —
-> com IA organizando o que você anota, e um harness que impede dado sensível de vazar.
+Um wizard que configura o seu. Você responde cinco perguntas e sai com o material pronto
+para uma IA organizar.
 
-Não é específico de segurança. Serve para **desenvolvimento, infraestrutura, jurídico,
-análise de dados, pesquisa, operação** — qualquer atividade em que você produz
-conhecimento e depois recomeça do zero.
-
----
+Não é sobre segurança. Serve para desenvolvimento, infraestrutura, jurídico, análise de
+dados, pesquisa, operação. Qualquer trabalho em que você resolve um problema difícil e
+depois esquece como resolveu.
 
 ## O problema
 
-Você resolve algo difícil. Anota no bloco de notas, no chat, num print.
-Três meses depois o mesmo problema aparece **e você recomeça**.
+Você resolve algo que dá trabalho. Anota no bloco de notas, no chat, num print. Três meses
+depois o mesmo problema aparece e você recomeça do zero.
 
-Não é falta de disciplina. É que **registrar dá trabalho na hora e o benefício
-só aparece depois**. Quem paga a conta é o você do futuro.
+Não é falta de disciplina. Registrar dá trabalho na hora e o benefício só aparece depois.
+Quem paga a conta é o você do futuro.
 
-E o agravante: o red team (ou o dev, ou o jurídico) gera muito conhecimento e retém
-pouco. O gargalo nunca foi **produzir** — sempre foi **reter**.
+E tem um agravante. Quem trabalha com segurança, ou desenvolvimento, ou jurídico, produz
+muito conhecimento e retém pouco. O gargalo nunca foi produzir. Sempre foi reter.
 
----
+## Como funciona
 
-## Como funciona (3 verbos)
+São três passos.
 
-| Verbo | O que é | Quem faz |
-|---|---|---|
-| **Capturar** | anotar do jeito que sair, sem formato | você |
-| **Estruturar** | virar nota com forma fixa | a IA |
-| **Reutilizar** | perguntar em vez de recomeçar | você, na próxima |
+Você captura do jeito que sair. Sem formato, sem se preocupar com nada. Se você exigir
+formato na hora da captura, você não captura.
 
-O formato é o que permite achar depois. E formato não é trabalho seu — é da IA.
+A IA estrutura. Ela pega a anotação feia e devolve uma nota com forma fixa. Formato é o que
+permite achar depois, e formato não é trabalho seu.
 
----
+Na próxima vez você reutiliza. Busca antes de começar em vez de recomeçar.
 
-## Quickstart (3 comandos)
+## Começando
 
 ```bash
-git clone https://github.com/<seu-usuario>/second-brain-wizard.git
+git clone https://github.com/knyKM/second-brain-wizard.git
 cd second-brain-wizard
 
-# 1. o wizard pergunta 5 coisas e gera seu material
+# 1. o wizard pergunta cinco coisas e gera seu material
 python wizard/wizard.py
 
-# 2. o harness protege dado sensível ANTES de mandar para a IA
+# 2. o harness protege dado sensível antes de mandar para a IA
 python harness/sanitizar.py meu-projeto.txt --revisar
 
 # 3. mande o arquivo .sanitizado.txt para a IA
 ```
 
-Sem dependência externa. Só Python 3.9+.
+Precisa de Python 3.9 ou mais novo. Nada além disso.
 
----
+## Por que um wizard e não um template
 
-## Por que existe um wizard (e não só um template)
+Porque todo mundo comete o mesmo erro: entrega material vago para a IA e espera que ela dê
+um jeito.
 
-Porque o erro que **todos** cometem é o mesmo: entregar material ambíguo para a IA
-e esperar que ela "dê um jeito".
+Ela não dá. Um agente sério para e diz o que falta. Isso é bom, não é defeito. A resposta
+que eu recebi quando testei isso pela primeira vez:
 
-Ela não dá. Um agente sério **para** e diz o que falta — e isso é uma virtude, não um defeito:
+> "Sem escopo e sem critério de aceitação, o card raiz viraria 8 cards sem como verificar
+> conclusão. E o perfil não improvisa em cima de escopo ambíguo."
 
-> *"Sem escopo e sem critério de aceitação, o card raiz viraria 8 cards sem como verificar
-> conclusão — e o perfil não improvisa em cima de escopo ambíguo."*
-> — resposta real de um agente ao receber material sem os campos
-
-O wizard existe para você **não passar por isso**. Ele pergunta as quatro coisas que a IA precisa:
+O wizard existe para você não passar por isso. Ele pergunta as quatro coisas que a IA precisa:
 
 ```
 ## OBJETIVO              o que a documentação tem que entregar
-## ESCOPO               DENTRO: ...  /  FORA: ...   (o limite é o que impede invenção)
-## ETAPAS               numeradas — é o que vira card no Kanban
+## ESCOPO               DENTRO: ...  /  FORA: ...   (o limite impede invenção)
+## ETAPAS               numeradas, porque é o que vira card no Kanban
 ## CRITERIO DE ACEITACAO como saber que acabou
 ```
 
-Se você não consegue escrever o **critério de aceitação**, o material ainda não está
-pronto. Escrever o critério é o que força você a saber o que queria.
+Se você não consegue escrever o critério de aceitação, o material ainda não está pronto.
+Escrever o critério é o que força você a saber o que queria.
 
----
+## O harness
 
-## O harness (a parte que quase todo mundo esquece)
+Essa é a parte que quase todo mundo esquece.
 
-Quando você manda anotação crua para uma API de LLM, ela **sai da sua máquina**.
-Se tiver senha, token, CPF ou nome de cliente, você vazou — e não tem desfazer.
+Quando você manda anotação crua para uma API de modelo, ela sai da sua máquina. Se tiver
+senha, token, CPF ou nome de cliente, você acabou de vazar. E não tem como desfazer.
 
-**O dado sensível não atravessa a fronteira da máquina:**
+Então o dado sensível não atravessa a fronteira da máquina. O fluxo fica assim:
 
 ```
 anotação crua
-      │
-      ▼
-┌──────────────┐
-│   HARNESS    │  roda local, antes de qualquer envio
-│ sanitizar.py │
-└──────┬───────┘
-       │
-   ┌───┴────┐
-   ▼        ▼
-sanitizada  mapa local
-   │        (fica na máquina)
-   ▼
- MODELO  ← só vê <<CREDENCIAL_2>>, nunca a senha
+      |
+      v
+[ HARNESS ]  roda local, antes de qualquer envio
+      |
+  +---+---+
+  v       v
+versão   mapa local
+limpa    (fica na máquina)
+  |
+  v
+ MODELO  (só vê <<CREDENCIAL_2>>, nunca a senha)
 ```
 
-O modelo recebe `<<CREDENCIAL_2>>` e documenta *"havia uma credencial no arquivo de
-configuração"* — que é toda a informação de que ele precisa.
+O modelo recebe `<<CREDENCIAL_2>>` e escreve "havia uma credencial no arquivo de
+configuração". Que é toda a informação de que ele precisa.
 
 ```bash
 python harness/sanitizar.py anotacoes.txt --revisar
 ```
 
-| Mascara | Exemplo |
-|---|---|
-| Credencial nomeada | `senha:` `password=` `api_key:` `token:` |
-| Tokens | `sk-…` `ghp_…` `glpat-…` `AKIA…` `xoxb-…` JWT |
-| Chave privada | bloco `BEGIN…PRIVATE KEY` inteiro |
-| Connection string | só `Password=`, preserva server/database |
-| PII | e-mail, telefone, CPF, CNPJ |
-| Infra | IP privado/público, domínio de cliente |
+Ele mascara credencial nomeada (`senha:`, `password=`, `api_key:`, `token:`), tokens
+conhecidos (`sk-...`, `ghp_...`, `glpat-...`, `AKIA...`, `xoxb-...`, JWT), bloco de chave
+privada inteiro, a parte `Password=` de connection string (preservando server e database),
+e-mail, telefone, CPF, CNPJ, IP privado e público, e domínio de cliente.
 
-**Limites honestos:** ele não adivinha (por isso o `--revisar`), e ausência de match
-não é prova de segurança. "Nenhum padrão encontrado" significa "nada que eu conheça".
+Dois limites que você precisa saber. Ele não adivinha, então padrão fora da lista passa
+adiante (é por isso que existe o `--revisar`). E ausência de match não é prova de segurança:
+"nenhum padrão encontrado" quer dizer "nada que eu conheça", não "está tudo bem".
 
-> ⚠️ O `*.mapa-local.json` contém os valores reais. Nunca em repositório, chat ou nuvem.
-
----
+O arquivo `*.mapa-local.json` tem os valores reais para você poder reverter. É o arquivo
+mais perigoso do processo. Nunca em repositório, chat ou nuvem.
 
 ## Áreas com exemplo pronto
 
@@ -132,17 +119,15 @@ não é prova de segurança. "Nenhum padrão encontrado" significa "nada que eu 
 python wizard/wizard.py --areas
 ```
 
-| Área | O que o wizard configura |
-|---|---|
-| `red-team` | técnica documentada com ATT&CK, detecção e mitigação |
-| `desenvolvimento` | decisão de arquitetura com alternativas descartadas |
-| `infraestrutura` | mudança com rollback testado |
-| `juridico` | fatos, provas e tese — sem alegar o que não tem prova |
-| `dados` | análise reproduzível por outra pessoa |
+Servem para você não começar do zero:
 
-Os 5 exemplos estão em [`exemplos/`](exemplos/).
+- `red-team` documenta a técnica com ATT&CK, detecção e mitigação
+- `desenvolvimento` registra a decisão de arquitetura com as alternativas descartadas
+- `infraestrutura` registra a mudança com rollback testado
+- `juridico` organiza fatos, provas e tese sem alegar o que não tem prova
+- `dados` deixa a análise reproduzível por outra pessoa
 
----
+Os cinco exemplos estão em `exemplos/`.
 
 ## Validando antes de mandar
 
@@ -160,20 +145,17 @@ VALIDANDO: meu-projeto.txt  (1.038 bytes)
 
   etapas numeradas: 3
 
-RESULTADO: material valido. Proximo passo:
-  python harness/sanitizar.py meu-projeto.txt
+RESULTADO: material valido.
 ```
 
-Se faltar campo, ele diz **qual** e **por que** o agente vai parar.
+Se faltar campo ele diz qual, e diz o que vai acontecer: o agente vai parar e pedir.
 
----
+## O que fazer com o material
 
-## O que você faz com o material depois
+O arquivo gerado é a entrada. A saída é a nota estruturada no seu acervo, seja Obsidian,
+Notion, Logseq ou uma pasta qualquer com git.
 
-O arquivo gerado é a **entrada**. A saída é a nota estruturada no seu acervo
-(Obsidian, Notion, pasta com git — qualquer coisa pesquisável).
-
-Prompt para colar no seu agente:
+Prompt para colar junto com o arquivo sanitizado:
 
 ```text
 @file:<arquivo>.sanitizado.txt
@@ -185,7 +167,7 @@ Documenta no meu acervo, no projeto "<NOME>":
 - o que foi feito, em ordem
 - o que foi descoberto ou decidido, com a evidência que sustenta cada ponto
 - o que ficou em aberto e o que falta para fechar
-- as dúvidas registradas, sem inventar resposta
+- as dúvidas que eu registrei, sem inventar resposta
 - as lições que servem para a próxima vez
 
 Regras:
@@ -196,43 +178,40 @@ Regras:
 5. Credencial ou segredo: registra existência e local, mascara o valor, me avisa.
 ```
 
----
+## O que faz isso funcionar
 
-## Filosofia (o que faz isso funcionar)
+Agente que aceita material vago produz documento bonito e vazio. Agente que para e diz o
+que falta está trabalhando para você. Aprenda a gostar da recusa.
 
-1. **A recusa é uma feature.** Agente que aceita material ambíguo produz documento
-   bonito e vazio. Agente que para e diz o que falta está trabalhando pra você.
-2. **Separe fato de hipótese.** `CONFIRMADO` / `INFERIDO` / `NÃO TESTADO` — três estados, nunca dois.
-3. **Registre o que você NÃO testou.** Vale mais que a lista do que testou.
-4. **O valor mora na ligação.** Uma nota isolada é um arquivo. Duas notas ligadas são conhecimento.
-5. **Comece pequeno.** Uma coisa que você repete toda semana. Passo a passo, uma vez.
+Separe fato de hipótese. Confirmado, inferido e não testado são três estados, não dois.
 
----
+Registre o que você não testou. Vale mais do que a lista do que testou.
+
+O valor mora na ligação entre as notas. Uma nota sozinha é um arquivo. Duas notas ligadas
+são conhecimento.
+
+E comece pequeno. Uma coisa que você repete toda semana. Escreve o passo a passo uma vez e
+pronto, você já tem um playbook.
 
 ## O teste que quase ninguém faz
 
-> Abra sua própria nota de seis meses atrás.
-> **Você consegue executar o que está escrito, sem pensar?**
->
-> Se a resposta for "quase", você acabou de encontrar o seu problema.
+Abra sua própria nota de seis meses atrás.
 
-Documentação não falha quando você escreve. Falha quando **outra pessoa** — ou você
-no futuro — tenta usar.
+Você consegue executar o que está escrito, sem pensar?
 
----
+Se a resposta for "quase", você acabou de encontrar o seu problema. Documentação não falha
+quando você escreve. Falha quando outra pessoa, ou você no futuro, tenta usar.
 
-## Estrutura do repositório
+## O que tem aqui dentro
 
 ```
-wizard/wizard.py         o guia interativo (5 perguntas → arquivo válido)
-harness/sanitizar.py     o DLP que roda antes de qualquer envio
-exemplos/                5 áreas com material pronto
-docs/                    o método explicado
+wizard/wizard.py         o guia interativo (cinco perguntas, um arquivo válido)
+harness/sanitizar.py     o filtro que roda antes de qualquer envio
+exemplos/                cinco áreas com material pronto
+docs/                    o método explicado com calma
 templates/               o prompt para colar no agente
 ```
 
----
-
 ## Licença
 
-MIT — use, adapte, distribua. Veja [LICENSE](LICENSE).
+MIT. Use, adapte, distribua. O arquivo LICENSE tem o texto.
