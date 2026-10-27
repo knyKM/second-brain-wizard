@@ -1,0 +1,37 @@
+# exemplo-juridico
+# gerado pelo wizard em 2026-10-26
+# area: juridico
+
+## OBJETIVO
+Registrar fatos, provas e tese para escrever a peca sem depender da memoria
+
+## ESCOPO
+DENTRO:
+  - (preencher: o que esta incluido)
+  - (preencher: ativos, modulos ou partes)
+
+FORA:
+  - pedidos sem prova, questoes de outra area
+
+## ETAPAS
+
+### 1 - Fatos
+o que aconteceu, com data quando houver
+
+### 2 - Provas
+o que sustenta cada fato e o que esta faltando
+
+### 3 - Tese
+o fundamento e os pedidos, cada um com sua prova
+
+## CRITERIO DE ACEITACAO
+cada fato ligado a uma prova, cada pedido com fundamento e precedente, e a lista explicita do que NAO foi alegado por falta de prova
+
+## O QUE EU NAO TESTEI
+  [ ] (preencher — esta e a lista que evita susto no relatorio)
+
+## REGRAS
+  1. Registrar no momento, nao depois
+  2. Separar fato de hipotese: confirmado / inferido / nao testado
+  3. Registrar o que NAO foi testado
+  4. Ligar esta nota as notas relacionadas

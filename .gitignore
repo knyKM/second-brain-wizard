@@ -1,0 +1,30 @@
+# ===== NUNCA COMITAR =====
+# o mapa de sanitizacao contem os VALORES REAIS dos dados mascarados
+*.mapa-local.json
+
+# material sanitizado (e derivado do original, nao precisa versionar)
+*.sanitizado.txt
+
+# anotacoes de trabalho do usuario (o repo tem exemplos, nao dados)
+meu-*.txt
+!exemplos/*.txt
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ===== Editores / SO =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Local =====
+.env
+.env.*
+!env.example

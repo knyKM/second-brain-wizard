@@ -1,0 +1,37 @@
+# exemplo-infraestrutura
+# gerado pelo wizard em 2026-10-26
+# area: infraestrutura
+
+## OBJETIVO
+Registrar a mudanca com rollback completo, para reverter as 3h da manha
+
+## ESCOPO
+DENTRO:
+  - (preencher: o que esta incluido)
+  - (preencher: ativos, modulos ou partes)
+
+FORA:
+  - ambientes nao envolvidos, sistemas de terceiro
+
+## ETAPAS
+
+### 1 - Diagnostico
+qual era o estado antes e qual o sintoma
+
+### 2 - Execucao
+o que foi alterado, com o valor anterior registrado
+
+### 3 - Validacao
+como confirmei que voltou a funcionar
+
+## CRITERIO DE ACEITACAO
+nota com configuracao anterior e nova (diff), comandos de rollback testados, hosts validados e o que nao foi testado em producao
+
+## O QUE EU NAO TESTEI
+  [ ] (preencher — esta e a lista que evita susto no relatorio)
+
+## REGRAS
+  1. Registrar no momento, nao depois
+  2. Separar fato de hipotese: confirmado / inferido / nao testado
+  3. Registrar o que NAO foi testado
+  4. Ligar esta nota as notas relacionadas

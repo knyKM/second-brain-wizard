@@ -1,0 +1,37 @@
+# exemplo-red-team
+# gerado pelo wizard em 2026-10-26
+# area: red-team
+
+## OBJETIVO
+Documentar a tecnica executada para que seja reproduzivel e defensavel
+
+## ESCOPO
+DENTRO:
+  - (preencher: o que esta incluido)
+  - (preencher: ativos, modulos ou partes)
+
+FORA:
+  - persistencia sem autorizacao, dump de credencial, exfiltracao de dado real
+
+## ETAPAS
+
+### 1 - Acesso inicial
+como entrei, qual servico, qual falha permitiu
+
+### 2 - Escalacao
+quais privilegios eu tinha e qual deles permitiu subir
+
+### 3 - Impacto
+o que fiquei capaz de fazer e o que NAO fiz por escopo
+
+## CRITERIO DE ACEITACAO
+nota com comando exato, saida obtida, o privilegio que permitiu, mapeamento ATT&CK com sub-tecnica, deteccao e mitigacao
+
+## O QUE EU NAO TESTEI
+  [ ] (preencher — esta e a lista que evita susto no relatorio)
+
+## REGRAS
+  1. Registrar no momento, nao depois
+  2. Separar fato de hipotese: confirmado / inferido / nao testado
+  3. Registrar o que NAO foi testado
+  4. Ligar esta nota as notas relacionadas

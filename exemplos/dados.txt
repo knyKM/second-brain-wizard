@@ -1,0 +1,37 @@
+# exemplo-dados
+# gerado pelo wizard em 2026-10-26
+# area: dados
+
+## OBJETIVO
+Registrar a analise para que o resultado seja reproduzivel por outra pessoa
+
+## ESCOPO
+DENTRO:
+  - (preencher: o que esta incluido)
+  - (preencher: ativos, modulos ou partes)
+
+FORA:
+  - fontes nao validadas, recortes nao justificados
+
+## ETAPAS
+
+### 1 - Pergunta
+qual pergunta eu queria responder e por que ela importa
+
+### 2 - Metodo
+qual fonte, qual filtro, qual transformacao
+
+### 3 - Resultado
+o que encontrei e qual a margem de erro ou limitacao
+
+## CRITERIO DE ACEITACAO
+pergunta, fonte, filtro e transformacao registrados o suficiente para outra pessoa refazer e chegar ao mesmo numero
+
+## O QUE EU NAO TESTEI
+  [ ] (preencher — esta e a lista que evita susto no relatorio)
+
+## REGRAS
+  1. Registrar no momento, nao depois
+  2. Separar fato de hipotese: confirmado / inferido / nao testado
+  3. Registrar o que NAO foi testado
+  4. Ligar esta nota as notas relacionadas

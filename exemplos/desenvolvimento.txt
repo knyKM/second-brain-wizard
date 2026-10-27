@@ -1,0 +1,37 @@
+# exemplo-desenvolvimento
+# gerado pelo wizard em 2026-10-26
+# area: desenvolvimento
+
+## OBJETIVO
+Registrar a decisao tecnica para que ninguem a desfaca sem entender o motivo
+
+## ESCOPO
+DENTRO:
+  - (preencher: o que esta incluido)
+  - (preencher: ativos, modulos ou partes)
+
+FORA:
+  - modulos nao afetados, migracao de dado historico
+
+## ETAPAS
+
+### 1 - Avaliacao
+quais alternativas considerei e por que descartei cada uma
+
+### 2 - Implementacao
+o que mudou de fato, arquivo por arquivo
+
+### 3 - Validacao
+como provei que funciona (teste, benchmark, metrica)
+
+## CRITERIO DE ACEITACAO
+registro com alternativas descartadas e o motivo, numeros de antes e depois, como reverter, e o que ainda nao tem cobertura de teste
+
+## O QUE EU NAO TESTEI
+  [ ] (preencher — esta e a lista que evita susto no relatorio)
+
+## REGRAS
+  1. Registrar no momento, nao depois
+  2. Separar fato de hipotese: confirmado / inferido / nao testado
+  3. Registrar o que NAO foi testado
+  4. Ligar esta nota as notas relacionadas
